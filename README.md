@@ -8,8 +8,9 @@ based on genre, name of actor, the time of the day and the day of the
 week.
 
 <img src="./media/image1.png" style="width:6.1375in;height:4.98681in"
-alt="Graphical user interface, text, application, chat or text message Description automatically generated" />You
-should define your types in the following order: the two enums, Time,
+alt="Graphical user interface, text, application, chat or text message Description automatically generated" />
+
+You should define your types in the following order: the two enums, Time,
 Movie, Show and then Theater. In the test harness, you will create a
 theater, some movies and some shows. You will add movies to the show and
 then add the shows to the theater. Then, you will perform some simple
@@ -18,7 +19,9 @@ queries on this collection.
 ## The MovieDay Enum 2 Marks
 
 <img src="./media/image2.png" style="width:1.44722in;height:2.19722in"
-alt="Graphical user interface, application, Word Description automatically generated" />This
+alt="Graphical user interface, application, Word Description automatically generated" />
+
+This
 type represents the days of the week and is comprised of seven
 constants. The constants are the first three letters of the day of the
 week.
@@ -31,7 +34,9 @@ attribute to decorate this type.
 ## The GenreEnum Enum 5 Marks
 
 <img src="./media/image3.png" style="width:1.44722in;height:2.96806in"
-alt="Graphical user interface, application Description automatically generated" />This
+alt="Graphical user interface, application Description automatically generated" />
+
+This
 type represents the various categories of movie. Because a movie may
 fall under multiple categories, you will have to use the
 <span class="mark">\[Flags\]</span> to decorate this enum.
@@ -456,6 +461,7 @@ Again, these six methods illustrate the benefits of method overloading.
 In your test harness (the Main() method in the Program Class), copy and
 paste the following code:
 
+``` cs
 Movie terminator = new Movie("Terminator 2: Judgement Day", 1991, 105);
 
 terminator.AddActor("Arnold Schwarzenegger");
@@ -674,11 +680,14 @@ eglinton.PrintShows(time); //displays 6 objects
 
 eglinton.PrintShows(DayEnum.Sun, time); //displays 3 objects
 
+```
+
 ## Output:
 
 To understand what the code is doing, you will need to match the output
 to the appropriate code statements.
 
+``` txt
 Mon 11:35 Terminator 2: Judgement Day (1991) 105min (Action, Horror)
 Arnold Schwarzenegger, Linda Hamilton \$5.95
 
@@ -992,3 +1001,5 @@ Aaron Johnson, Ken Watanabe, Elizabeth Olsen \$6.89
 3: Sun 14:15 Avengers: Endgame (2019) 120min (Action, Adventure,
 Fantasy) Robert Downey Jr., Chris Evans, Chris Hemsworth, Scarlett
 Johansson, Mark Ruffalo \$10.75
+
+```
