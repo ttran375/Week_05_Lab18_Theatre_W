@@ -223,8 +223,6 @@
     }
 
 
-
-
     public enum DayEnum
     {
         Sun,
@@ -251,6 +249,7 @@
         Animation = 256,
         Documentary = 512
     }
+
 
     public struct Time
     {
@@ -279,6 +278,7 @@
         }
     }
 
+
     public class Movie
     {
         public string Title { get; }
@@ -305,6 +305,7 @@
             Genre |= genre;
         }
     }
+
 
     public struct Show
     {
