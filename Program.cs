@@ -251,16 +251,10 @@
     }
 
 
-    public struct Time
+    public struct Time(int hours, int minutes = 0)
     {
-        public int Hours { get; }
-        public int Minutes { get; }
-
-        public Time(int hours, int minutes = 0)
-        {
-            Hours = hours;
-            Minutes = minutes;
-        }
+        public int Hours { get; } = hours;
+        public int Minutes { get; } = minutes;
 
         public override string ToString()
         {
@@ -294,21 +288,13 @@
     }
 
 
-    public class Movie
+    public class Movie(string title, int year, int length)
     {
-        public string Title { get; }
-        public int Year { get; }
-        public int Length { get; }
+        public string Title { get; } = title;
+        public int Year { get; } = year;
+        public int Length { get; } = length;
         public GenreEnum Genre { get; private set; }
-        public List<string> Cast { get; private set; }
-
-        public Movie(string title, int year, int length)
-        {
-            Title = title;
-            Year = year;
-            Length = length;
-            Cast = new List<string>();
-        }
+        public List<string> Cast { get; private set; } = [];
 
         public void AddActor(string actor)
         {
@@ -322,20 +308,12 @@
     }
 
 
-    public struct Show
+    public struct Show(Movie movie, Time time, DayEnum day, double price)
     {
-        public Movie Movie { get; }
-        public Time Time { get; }
-        public DayEnum Day { get; }
-        public double Price { get; }
-
-        public Show(Movie movie, Time time, DayEnum day, double price)
-        {
-            Movie = movie;
-            Time = time;
-            Day = day;
-            Price = price;
-        }
+        public Movie Movie { get; } = movie;
+        public Time Time { get; } = time;
+        public DayEnum Day { get; } = day;
+        public double Price { get; } = price;
 
         public override string ToString()
         {
@@ -343,60 +321,54 @@
         }
     }
 
-    public class Theatre
+    public class Theatre(string name)
     {
-        private List<Show> shows;
+        private readonly List<Show> _shows = [];
 
-        public string Name { get; }
-
-        public Theatre(string name)
-        {
-            Name = name;
-            shows = new List<Show>();
-        }
+        public string Name { get; } = name;
 
         public void AddShow(Show show)
         {
-            shows.Add(show);
+            _shows.Add(show);
         }
 
         public void PrintShows()
         {
             Console.WriteLine($"Theatre: {Name}\nAll Shows:");
-            PrintShowList(shows);
+            PrintShowList(_shows);
         }
 
         public void PrintShows(GenreEnum genre)
         {
-            var filteredShows = shows.FindAll(show => show.Movie.Genre.HasFlag(genre));
+            var filteredShows = _shows.FindAll(show => show.Movie.Genre.HasFlag(genre));
             Console.WriteLine($"Theatre: {Name}\nGenre: {genre}\nFiltered Shows:");
             PrintShowList(filteredShows);
         }
 
         public void PrintShows(DayEnum day)
         {
-            var filteredShows = shows.FindAll(show => show.Day == day);
+            var filteredShows = _shows.FindAll(show => show.Day == day);
             Console.WriteLine($"Theatre: {Name}\nDay: {day}\nFiltered Shows:");
             PrintShowList(filteredShows);
         }
 
         public void PrintShows(Time time)
         {
-            var filteredShows = shows.FindAll(show => show.Time == time);
+            var filteredShows = _shows.FindAll(show => show.Time == time);
             Console.WriteLine($"Theatre: {Name}\nTime: {time}\nFiltered Shows:");
             PrintShowList(filteredShows);
         }
 
         public void PrintShows(string actor)
         {
-            var filteredShows = shows.FindAll(show => show.Movie.Cast.Contains(actor));
+            var filteredShows = _shows.FindAll(show => show.Movie.Cast.Contains(actor));
             Console.WriteLine($"Theatre: {Name}\nActor: {actor}\nFiltered Shows:");
             PrintShowList(filteredShows);
         }
 
         public void PrintShows(DayEnum day, Time time)
         {
-            var filteredShows = shows.FindAll(show => show.Day == day && show.Time == time);
+            var filteredShows = _shows.FindAll(show => show.Day == day && show.Time == time);
             Console.WriteLine($"Theatre: {Name}\nDay: {day}, Time: {time}\nFiltered Shows:");
             PrintShowList(filteredShows);
         }
