@@ -1,5 +1,9 @@
 # Implement a Theatre Application 75 Marks
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ttran375/comp123-lab8)
+
+[![Style Check](https://github.com/ttran375/comp123-lab8/actions/workflows/main.yml/badge.svg)](https://github.com/ttran375/comp123-lab8/actions/workflows/main.yml)
+
 This is the most complex application that you have seen so far. It
 comprises of six user defined types: three classes, a struct and two
 enums. This assignment attempts to simulate a simple version of a
