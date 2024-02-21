@@ -276,6 +276,21 @@
         {
             return !(lhs == rhs);
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Time)
+            {
+                return this == (Time)obj;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            // A simple hash code implementation
+            return Hours.GetHashCode() ^ Minutes.GetHashCode();
+        }
     }
 
 
