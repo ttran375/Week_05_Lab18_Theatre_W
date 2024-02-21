@@ -282,7 +282,6 @@
 
         public override int GetHashCode()
         {
-            // A simple hash code implementation
             return Hours.GetHashCode() ^ Minutes.GetHashCode();
         }
     }

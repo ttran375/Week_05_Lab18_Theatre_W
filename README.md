@@ -99,35 +99,35 @@ This type represents a time when a movie is schedule to be shown.
 </tbody>
 </table>
 
-### Fields:
+### Fields
 
 All the properties have public getters and private setters and are
 self-explanatory.
 
-### Properties:
+### Properties
 
 The two properties are public without setters.
 
-1.  **Hours** – this int represents the property hours. No setter.
+1. **Hours** – this int represents the property hours. No setter.
 
-2.  **Minutes** – this int represents the property minutes. No setter.
+2. **Minutes** – this int represents the property minutes. No setter.
 
-### Constructor:
+### Constructor
 
-1.  **<span class="mark">public Time(int hours, int minutes =
+1. **<span class="mark">public Time(int hours, int minutes =
     0)</span>** – This public constructor takes one mandatory and one
     optional parameters and assigns them to the appropriate properties.
     You do not need to do any error checking. The second parameter is
     optional.
 
-### Methods:
+### Methods
 
-1.  **<span class="mark">public override string</span> ToString()** –
+1. **<span class="mark">public override string</span> ToString()** –
     This method overrides the same method of the Object class. It does
     not take any parameter but return a string representation of itself.
     You decide on the format for the output.
 
-2.  **<span class="mark">public static operator bool</span>
+2. **<span class="mark">public static operator bool</span>
     ==(**<span class="mark">Time lhs, Time rhs</span>**)** – This method
     overrides the equality operator. This method will return true if the
     difference between the two arguments is less than or equal to 15
@@ -142,7 +142,7 @@ The two properties are public without setters.
     \[Math.Abs(value1 – value2)\]  
     e.g. 3:55 == 4:05 and 4:10 ≠ 4:30
 
-3.  **<span class="mark">public static operator bool</span>
+3. **<span class="mark">public static operator bool</span>
     !=(**<span class="mark">Time lhs, Time rhs</span>**)** – This method
     overrides the not equality operator. This method is required by the
     compiler when the above method is implemented. It does the reverse
@@ -195,47 +195,47 @@ This class will model a movie.
 </tbody>
 </table>
 
-### Properties:
+### Properties
 
 All of the properties have public getters and missing setters and are
 self-explanatory.
 
-1.  **Length** – this property is an int representing the length of the
+1. **Length** – this property is an int representing the length of the
     movie in minutes. The getter is public and the setter is absent.
 
-2.  **Year** – this property is an int representing the year that this
+2. **Year** – this property is an int representing the year that this
     movie was released. The getter is public and the setter is absent.
 
-3.  **Title** – this property is a string representing the title of the
+3. **Title** – this property is a string representing the title of the
     movie. The getter is public and the setter is absent.
 
-4.  **Genre** – this property is an enum representing the genre of this
+4. **Genre** – this property is an enum representing the genre of this
     movie. The getter is public and the setter is private. This property
     is also modified by the **<span class="mark">SetGenre(Genre
     genre)</span>** method
 
-5.  **Cast** – this property is a list of string representing the names
+5. **Cast** – this property is a list of string representing the names
     of the actors in this movie. The getter is public and the setter is
     private.
 
-### Constructor:
+### Constructor
 
-1.  **<span class="mark">public Movie(string name, int year, int
+1. **<span class="mark">public Movie(string name, int year, int
     length)</span>** – This public constructor takes one string and two
     int parameters. It does the following:
 
-    1.  Assigns the arguments to the appropriate properties.
+    1. Assigns the arguments to the appropriate properties.
 
-    2.  Initialize the Cast property to an empty list of string.
+    2. Initialize the Cast property to an empty list of string.
 
-### Methods:
+### Methods
 
-1.  **<span class="mark">public void</span>
+1. **<span class="mark">public void</span>
     AddActor(<span class="mark">string actor</span>)** – This public
     method takes a single a string argument and adds it to the
     collection of actors (**Cast**).
 
-2.  **<span class="mark">public void SetGenre(Genre genre)</span>** –
+2. **<span class="mark">public void SetGenre(Genre genre)</span>** –
     This public method takes a single enum argument and adds (not
     assigns) it to the current Genre. This argument maybe a combination
     of multiple genres.
@@ -286,33 +286,33 @@ short description of the struct members is given below:
 </tbody>
 </table>
 
-### Properties:
+### Properties
 
 All the properties have public getter and the setters are absent.
 
-1.  **Price** – this property is a double representing the price of
+1. **Price** – this property is a double representing the price of
     admission to this show. The getter is public and the setter is
     absent.
 
-2.  **Day** – this property is an enum representing the day of the week
+2. **Day** – this property is an enum representing the day of the week
     of this show. The getter is public and the setter is absent.
 
-3.  **Movie** – this property is an object reference of the movie class.
+3. **Movie** – this property is an object reference of the movie class.
     The getter is public and the setter is absent.
 
-4.  **Time** – this property is an object of the Time class representing
+4. **Time** – this property is an object of the Time class representing
     the time of this show. The getter is public and the setter is
     absent.
 
-### Constructor:
+### Constructor
 
-1.  **public Show(Movie movie, Time time, DayEnum day, double price)** –
+1. **public Show(Movie movie, Time time, DayEnum day, double price)** –
     This is the public constructor that takes four arguments and assigns
     them to the appropriate properties.
 
-### Methods:
+### Methods
 
-1.  **<span class="mark">public override string ToString()</span>** –
+1. **<span class="mark">public override string ToString()</span>** –
     This is the public method overrides the method of the same name in
     the object class to return a meaningful description of this
     object.  
@@ -375,28 +375,28 @@ Studio. A short description of the class members is given below:
 </tbody>
 </table>
 
-### Fields:
+### Fields
 
-1.  **shows** – this private field is a list of Show objects.
+1. **shows** – this private field is a list of Show objects.
 
-### Properties:
+### Properties
 
-2.  **Name** – this property is a string representing the name of the
+2. **Name** – this property is a string representing the name of the
     theater. Getter is public and the setter is absent
 
-### Constructor:
+### Constructor
 
-1.  **<span class="mark">public Theater(string name)</span>** – This is
+1. **<span class="mark">public Theater(string name)</span>** – This is
     the public constructor that takes the name of the theater. This
     constructor does the following:
 
-    1.  Assigns the argument to the appropriate property.
+    1. Assigns the argument to the appropriate property.
 
-    2.  Initialize the **Shows** property to a new list of show
+    2. Initialize the **Shows** property to a new list of show
 
-### Methods:
+### Methods
 
-1.  **<span class="mark">public void AddShow(Show show)</span>** – This
+1. **<span class="mark">public void AddShow(Show show)</span>** – This
     public method takes a show object and adds it to the collection of
     shows.
 
@@ -412,20 +412,20 @@ Again, these six methods illustrate the benefits of method overloading.
 
 - A numbered list of the movies displayed.
 
-2.  **<span class="mark">public void PrintShows()</span>** – This public
+2. **<span class="mark">public void PrintShows()</span>** – This public
     method does not take any argument neither does it return a value. It
     displays all the shows that is available in the shows collection.
 
-3.  **<span class="mark">public void PrintShows(Genre genre)</span>** –
+3. **<span class="mark">public void PrintShows(Genre genre)</span>** –
     This public method takes a genre as an argument and display all the
     shows that contains the flag of this genre.  
     Use the instance method **HasFlags()**.
 
-4.  **<span class="mark">public void PrintShows(Day day)</span>** – This
+4. **<span class="mark">public void PrintShows(Day day)</span>** – This
     public method takes a day object as an argument and display all the
     shows matching this day object.
 
-5.  **<span class="mark">public void PrintShows(Time time)</span>** –
+5. **<span class="mark">public void PrintShows(Time time)</span>** –
     This public method takes a time object as an argument and display
     all the shows matching the hour value of this time object.  
     This will only work correctly if the **==** operator is implemented
@@ -438,7 +438,7 @@ Again, these six methods illustrate the benefits of method overloading.
     to supply a custom == operator that compares the numeric values of
     the fields of the two objects must be compared.
 
-6.  **<span class="mark">public void PrintShows(string actor)</span>** –
+6. **<span class="mark">public void PrintShows(string actor)</span>** –
     This public method takes a string representing the name of an actor
     as an argument and display all the shows that this actor appears
     in.  
@@ -446,7 +446,7 @@ Again, these six methods illustrate the benefits of method overloading.
     will have to use the instance method **Contains()** to check for the
     presence of an actor.
 
-7.  **<span class="mark">public void PrintShows(Day day, Time
+7. **<span class="mark">public void PrintShows(Day day, Time
     time)</span>** – This public method takes a day value and a time
     value as arguments and display all the shows matching the day and
     the time value  
@@ -682,7 +682,7 @@ eglinton.PrintShows(DayEnum.Sun, time); //displays 3 objects
 
 ```
 
-## Output:
+## Output
 
 To understand what the code is doing, you will need to match the output
 to the appropriate code statements.
