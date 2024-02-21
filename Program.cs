@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Movie terminator = new Movie("Terminator 2: Judgement Day", 1991, 105);
+            Movie terminator = new("Terminator 2: Judgement Day", 1991, 105);
 
             terminator.AddActor("Arnold Schwarzenegger");
 
@@ -12,21 +12,21 @@
 
             terminator.AddActor("Linda Hamilton");
 
-            Show s1 = new Show(terminator, new Time(11, 35), DayEnum.Mon, 5.95);
+            Show s1 = new(terminator, new Time(11, 35), DayEnum.Mon, 5.95);
 
             Console.WriteLine(s1);
 
 
             Console.WriteLine(s1); //displays one object
 
-            Theatre eglinton = new Theatre("Cineplex");
+            Theatre eglinton = new("Cineplex");
 
             eglinton.AddShow(s1);
 
             eglinton.PrintShows(); //displays one object
 
 
-            Movie godzilla = new Movie("Godzilla 2014", 2014, 123);
+            Movie godzilla = new("Godzilla 2014", 2014, 123);
 
             godzilla.AddActor("Aaron Johnson");
 
@@ -37,7 +37,7 @@
             godzilla.SetGenre(GenreEnum.Action | GenreEnum.Documentary | GenreEnum.Comedy);
 
 
-            Movie trancendence = new Movie("Transendence", 2014, 120);
+            Movie trancendence = new("Transendence", 2014, 120);
 
             trancendence.AddActor("Johnny Depp");
 
@@ -48,7 +48,7 @@
             eglinton.AddShow(new Show(trancendence, new Time(18, 5), DayEnum.Sun, 7.87));
 
 
-            Movie m1 = new Movie("The Shawshank Redemption", 1994, 120);
+            Movie m1 = new("The Shawshank Redemption", 1994, 120);
 
             m1.AddActor("Tim Robbins");
 
@@ -59,7 +59,7 @@
             eglinton.AddShow(new Show(m1, new Time(14, 5), DayEnum.Sun, 8.87));
 
 
-            Movie avengers = new Movie("Avengers: Endgame", 2019, 120);
+            Movie avengers = new("Avengers: Endgame", 2019, 120);
 
             avengers.AddActor("Robert Downey Jr.");
 
@@ -139,7 +139,7 @@
             eglinton.AddShow(new Show(m1, new Time(22, 5), DayEnum.Sun, 10.25));
 
 
-            Movie car3 = new Movie("Cars 3", 2017, 109);
+            Movie car3 = new("Cars 3", 2017, 109);
 
             car3.AddActor("Owen Williams");
 
@@ -156,7 +156,7 @@
             eglinton.AddShow(new Show(car3, new Time(11, 05), DayEnum.Sat, 6.50));
 
 
-            Movie toys4 = new Movie("Toys Story 4", 2019, 89);
+            Movie toys4 = new("Toys Story 4", 2019, 89);
 
             toys4.AddActor("Keanu Reeves");
 
@@ -213,7 +213,7 @@
             eglinton.PrintShows("Morgan Freeman"); //displays 5 objects
 
 
-            Time time = new Time(14, 05);
+            Time time = new(14, 05);
 
             eglinton.PrintShows(time); //displays 6 objects
 
@@ -251,7 +251,7 @@
     }
 
 
-    public struct Time(int hours, int minutes = 0)
+    public readonly struct Time(int hours, int minutes = 0)
     {
         public int Hours { get; } = hours;
         public int Minutes { get; } = minutes;
@@ -307,7 +307,7 @@
     }
 
 
-    public struct Show(Movie movie, Time time, DayEnum day, double price)
+    public readonly struct Show(Movie movie, Time time, DayEnum day, double price)
     {
         public Movie Movie { get; } = movie;
         public Time Time { get; } = time;
@@ -372,7 +372,7 @@
             PrintShowList(filteredShows);
         }
 
-        private void PrintShowList(List<Show> showList)
+        private static void PrintShowList(List<Show> showList)
         {
             for (int i = 0; i < showList.Count; i++)
             {
